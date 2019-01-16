@@ -18,6 +18,7 @@
   <ItemGroup>
     <Content Include="Logs\**\*" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="credentials.json" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="RunNoctVogel.sh" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

@@ -49,7 +49,7 @@ namespace NoctVogel
             await discordclient.LoginAsync(TokenType.Bot, tokens["discordToken"]);
             await discordclient.StartAsync();
             time.Stop();
-            await LS.Write($"Connected in {time.Elapsed.TotalSeconds.ToString("F3")} seconds", ConsoleColor.DarkGreen);
+            await LS.Write($"Connected to Discord in {time.Elapsed.TotalSeconds.ToString("F3")} seconds", ConsoleColor.DarkGreen);
 
             // Subscribe to events
             discordclient.MessageReceived += ES.MessageReceived;
@@ -60,7 +60,7 @@ namespace NoctVogel
             time = Stopwatch.StartNew();
             Auth.SetUserCredentials(tokens["consumerKey"], tokens["consumerSecret"], tokens["accessToken"], tokens["accessSecret"]);
             time.Stop();
-            await LS.Write($"Connected in {time.Elapsed.TotalSeconds.ToString("F3")} seconds", ConsoleColor.DarkGreen);
+            await LS.Write($"Connected to Twitter in {time.Elapsed.TotalSeconds.ToString("F3")} seconds", ConsoleColor.DarkGreen);
             tweetuser = User.GetAuthenticatedUser();
 
             // Initialize the CommandHandler and ServiceProvider

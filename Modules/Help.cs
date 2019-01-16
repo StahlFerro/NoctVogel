@@ -9,7 +9,7 @@ using Discord.WebSocket;
 
 namespace NoctVogel.Modules
 {
-    public class Help : ModuleBase
+    public class Help : ModuleBase<SocketCommandContext>
     {
         private CommandService CS;
         public Help(CommandService service)
@@ -49,7 +49,7 @@ namespace NoctVogel.Modules
                     totalc += commands.Count();
                     number++;
                 }
-                E.WithTitle($"StatusBot Commands ({totalc} available)");
+                E.WithTitle($"NoctVogel Commands ({totalc} available)");
                 await ReplyAsync("", false, E.Build());
             }
 
