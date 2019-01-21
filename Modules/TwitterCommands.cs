@@ -28,10 +28,10 @@ namespace NoctVogel.Modules
         [RequireOwner]
         public async Task TweetMsg([Remainder] string text)
         {
-            if (string.IsNullOrWhiteSpace(text) || text.Length > 140)
-                await ReplyAsync("Tweet message cannot be more than 140 letters");
-            tweetuser.PublishTweet(text);
-            await ReplyAsync("Tweet successfully sent");
+            if (string.IsNullOrWhiteSpace(text) || text.Length > 280)
+                await ReplyAsync("Tweet message cannot be more than 280 letters");
+            var tweet = tweetuser.PublishTweet(text);
+            await ReplyAsync(tweet.Url);
         }
 
         [Command("userinfo", RunMode = RunMode.Async)]
