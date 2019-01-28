@@ -62,8 +62,8 @@ namespace NoctVogel.Services
         {
             Task.Run(async () =>
             {
-                //Outputs to console and logs to logfile if the message starts with the s] prefix or is from StatusBot itself
-                if (msg.Content.StartsWith("s]") || msg.Author.Id == 332603467577425929)
+                //Outputs to console and logs to logfile if the message starts with the n] prefix or is from NoctVogel itself
+                if (msg.Content.StartsWith("n]") || msg.Author.Id == 534730188873793537)
                 {
                     var ch = msg.Channel as IGuildChannel;
                     var G = ch.Guild as IGuild;
